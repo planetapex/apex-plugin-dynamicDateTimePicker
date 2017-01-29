@@ -1,2 +1,2 @@
 # dynamicDate
-A Plugin for Apex Date Calendar and Time Selector
+A Plugin for Oracle Apex Date Calendar and Time Selector
