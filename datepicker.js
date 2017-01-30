@@ -13,7 +13,7 @@
         defaults = {
             classes: '',
             inline: false,
-            language: 'aassas',
+            language: 'en',
             startDate: new Date(),
             firstDay: '',
             weekends: [6, 0],
@@ -78,7 +78,7 @@
 			onSlap: function onSlap(dateText, inst){ 
 					var extraParams = { dateText: dateText, inst: inst }, 
 					$this = $(this)
-                   console.log('in:' + dateText);
+                 //  console.log('in:' + dateText);
 				   $this.trigger('meonSlap', extraParams);
 				   apex.jQuery(this).trigger('meonSlap', extraParams);
 				   apex.event.trigger($this,'meonSlap',extraParams);
@@ -145,23 +145,7 @@
         this.minRange = '';
         this.maxRange = '';
         this._prevOnSelectValue = '';
-		/*this.opts.onSelect = 
-		function (fd, date,o) {
-					console.log('ho');
-					   var extraParams = { fd: fd, date: date }, 
-					    $this = $(this),_this = this;
-					//$(el).event.trigger('meonSlap', extraParams);
-					//this._trigger('meonSlap', extraParams);
-					//$.event.trigger($(el),'meonSlap',extraParams);
-					//  $this.trigger('meonSlap', extraParams);
-                   //  console.log(this.id);
-					 //console.log(this.el.id);
-				   apex.jQuery('#' + o.el.id).trigger('_triggerOnChange'); //, extraParams);
-				   apex.jQuery('#' + o.el.id).trigger('selectDate'); 
-				   //apex.event.trigger('#' + o.el.id).trigger('_triggerOnChange');
-				  // apex.event.trigger($(el),'onSelect',extraParams);
-				 //  apex.event.trigger('#' + o.el.id,'onSelect',extraParams);
-				};*/
+		
 
         this.init()
     };
@@ -224,9 +208,11 @@
                    apex.jQuery('#' + o.el.id).trigger('ontest');
 				  
                  });
-			this.$datepicker.on('onSelect', function(o, record, index){
+			
+            this.$datepicker.on('onSelect', function(o, record, index){
                    apex.jQuery('#' + o.el.id).trigger('ontest');
-				
+				    console.log('ohhhhhhhh');
+                    console.log(this);
 				   
                  });
 			
@@ -235,41 +221,55 @@
 			 
 			  // this.$el.on(this.opts.showEvent + '.adp', this._onShowEvent.bind(this));
 			  this.$el.on('render', function(o, record, index){
-                 	   console.log('asd');
+                 	 //  console.log('asd');
 						//apex.jQuery('#' + $(this).id).trigger('ontest');
 						apex.event.trigger(document.getElementById(this.id),'ontest');
                  });
 			this.$datepicker.on('onShow', function(o, record, index){
-                 	    console.log('asd');
+                 	   // console.log('asd');
                  });
 			
            $(this).on('onShow', function(o, record, index){
-                 	    console.log('asd');
+                 	   /// console.log('asd');
                  });			
 			
 			
 				  this.$el.on(this.opts.showEvent + '.adp', function(o, record, index){
-                 	    console.log('asd');
+                 	   // console.log('asd');
                  });
 			
 			
 			  this.$el.on('_onShowEvent', function(o, record, index){
-                 	    console.log('asd');
+                 	  //  console.log('asd');
                  });
 			this.$datepicker.on('_onShowEvent', function(o, record, index){
-                 	    console.log('asd');
+                 	   // console.log('asd');
                  });
 			
            $(this).on('_onShowEvent', function(o, record, index){
-                 	    console.log('asd');
+                 	   // console.log('asd');
                  });		
 				 
 				 
 			this.opts.onSelect  = function (fd, date,o) {
-				 console.log('ini');
-				console.log(o.el.id);
-				$this = $('#' + o.el.id) ; 
-				$this.trigger('dshow');
+			  
+                   
+                    console.log(o.opts.range);
+                 
+                
+			// if($('#' + o.el.id).attr('data-todate') == 'Y') {
+             if( o.opts.range == true) {
+                 console.log('ohhhhhhhh');
+                   $('#' + o.el.id).val(fd.split(',')[0]) ;
+                   //    $('#P1_DATE_TO').val(fd.split(',')[1]) ;                 
+                  $('#' +$('#' + o.el.id).attr('data-otheritem')).val(fd.split(',')[1]) ;
+
+             //  $('#P1_NEW')[0].dataset.otheritem; 
+                }
+
+                
+              // $('#P1_NEW').attr('data-otheritem');
+				//$this.trigger('dshow');
 				$(o).trigger('dshow');
 				apex.event.trigger(document,'onSelect');
 				$.event.trigger("onSelect");
