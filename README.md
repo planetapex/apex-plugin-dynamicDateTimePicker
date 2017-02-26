@@ -252,7 +252,8 @@ Examples
 
 **For days view**:
 ```javascript
-"days":"<span style='color:red;background-color:yellow;font-size:2em'>Check In:MM, yyyy</span>" ```
+"days":"<span style='color:red;background-color:yellow;font-size:2em'>Check In:MM, yyyy</span>" 
+```
 
 
 **For months view**:
