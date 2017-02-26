@@ -1,79 +1,36 @@
 {
-  "name": "D3 Force Network Chart",
-  "version": "2.0.3",
-  "description": "D3 force directed network visualization with an interactive customization wizard",
-  "keywords": ["d3.js", "force layout", "network visualization"],
-  "homepage": "https://gobrechts.net/wiki/projects/d3-force-apex-plugin",
+  "name": "Dynamic Date Time Picker",
+  "version": "1.0",
+  "private" : "N",
+  "description": "Dynamic Date and Time Picker based on Air date Picker",
+  "keywords": ["oracle","apex", "plugin", "item", "date","time", "datetime", "datepicker",  "datetimepicker", "clockpicker", "timepicker", "clock", "calendar"],
+  "homepage": "https://github.com/planetapex/apex-plugin-dynamicDateTimePicker",
   "bugs": {
-    "url": "https://github.com/ogobrecht/d3-force-apex-plugin/issues",
-    "email": "apex-plugin@gobrechts.net"
+    "url": "https://github.com/planetapex/apex-plugin-dynamicDateTimePicker/issues",
+    "email": "yasirali.wizerp@gmail.com"
   },
   "license": "MIT",
   "author": {
-    "name": "Ottmar Gobrecht",
-    "email": "apex-plugin@gobrechts.net",
-    "url": "https://gobrechts.net/wiki"
+    "name": "M.Yasir Ali Shah",
+    "email": "yasirali.wizerp@gmail.com",
+    "url": "https://pk.linkedin.com/in/m-yasir-ali-shah-13b5016a",
+    "linkedink" : "https://pk.linkedin.com/in/m-yasir-ali-shah-13b5016a"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ogobrecht/d3-force-apex-plugin.git"
+    "url": "https://github.com/planetapex/apex-plugin-dynamicDateTimePicker.git"
   },
+  "private": false,
   "oracle": {
     "versions": ["11.2.0.1", "12.1.0.1"],
     "apex": {
-      "versions": ["4.2.6", "5.0.0"],
+      "versions": ["4.2.6", "5.0.0", "5.1.0"],
       "plugin": {
-        "internalName": "NET.GOBRECHTS.D3.FORCE",
-        "type": "region",
-        "demo": "https://apex.oracle.com/pls/apex/f?p=18290:1",
-        "previewImage": "https://raw.githubusercontent.com/ogobrecht/d3-force-apex-plugin/master/preview.png"
+        "internalName": "COM.PLANETAPEX.DYNAMICDATETIMEPICKER",
+        "type": "item",
+        "demo": "https://apex.oracle.com/pls/apex/f?p=83009:2",
+        "previewImage": "https://raw.githubusercontent.com/planetapex/apex-plugin-dynamicDateTimePicker/master/assets/DP_Range.bmp"
       }
     }
   }
 }
-
-
-{
-  "name" : "ODF Viewer",
-  "version" : "0.8",
-  "private" : "Y",
-  "description" : "ODF Viewer is a region type plugin that allows you to display ODF files like spreadsheets(.ods) or documents(.odt) with a single sql query.",
-  "keywords" : ["webodf", "odf viewer"],
-  "homepage" : "https://github.com/Dani3lSun/apex-plugin-odfviewer",
-  "bugs" : {
-    "url" : "https://github.com/Dani3lSun/apex-plugin-odfviewer/issues",
-    "email" : "daniel@danielh.de"
-  },
-  "license" : "AGPL",
-  "author" : {
-    "name" : "Daniel Hochleitner",
-    "email" : "daniel@danielh.de",
-    "url" : "https://danielhochleitner.de",
-    "twitter" : "Dani3lSun",
-    "donationUrl" : "https://www.paypal.me/DanielHochleitnerIT/3"
-  },
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/Dani3lSun/apex-plugin-odfviewer.git"
-  },
-  "oracle" : {
-    "versions" : ["11.2.0.1", "12.1.0.1"],
-    "apex" : {
-      "versions" : ["5.0.0"],
-      "plugin" : {
-        "internalName" : "DE.DANIELH.ODFVIEWER",
-        "type" : "region",
-        "demo" : "https://apex.oracle.com/pls/apex/f?p=APEXPLUGIN",
-        "previewImage" : "https://raw.githubusercontent.com/Dani3lSun/apex-plugin-odfviewer/master/preview.png"
-      }
-    }
-  }
-}
-
-
-
-
-
-
-
-
