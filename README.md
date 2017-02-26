@@ -77,10 +77,12 @@ The expression is a comma separated value between set of Minimum(Hour:Minute) an
 
 Time from start of the day to 9:30 am then enter as following: 
 ```javascript
-00:00,9:30```
+00:00,9:30
+```
 Restricting Time From 10:30 am to 6:45 pm is as following: 
 ```javascript
-10:30,18:45```
+10:30,18:45
+```
 
 ___
 
