@@ -187,7 +187,7 @@ Selects the method the date picker calendar displays.
 
 Available options include:
 
-<dl>
+
 <dt>**On item click**</dt>
 <dd>The date time picker pop-up displays when the item is clicked.</dd>
 <dt>**On icon click**</dt>
@@ -200,7 +200,7 @@ Available options include:
 <dd>The date time picker pop-up displays when mouse hovers over the item.</dd>
 <dt>**Inline**</dt>
 <dd>The date time picker will be always visible, inline with the item.</dd>
-</dl>
+
 
 
 
