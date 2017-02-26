@@ -13,7 +13,7 @@ It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 - (Optional) Deploy the CSS/JS files from "src" directory on your webserver and change the "File Prefix" to webservers folder.
 
 ##Preview
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Date Picker")
+![alt text](assets/DP_Range.bmp "Date Picker")
 
 ##Demo Application
 [Date Picker Application](https://apex.oracle.com/pls/apex/f?p=83009:1 "DatePicket Homepage")
@@ -149,7 +149,8 @@ Examples
 - 02/19/2017
 - Item Based . To set the minimum date to the start of the month, Create a P1_MIN_DATE hidden Item and refer it in the Minimum Date attribute as  &P1_MIN_DATE.   Set its value to start of the Month by the following After Header PL/SQL expression computation: 
 ```pl/sql
-to_char(trunc(sysdate, 'MM'), 'MM/DD/YYYY')```
+to_char(trunc(sysdate, 'MM'), 'MM/DD/YYYY')
+```
 
 
 >Remember to use the date **'MM/DD/YYYY'** OR **'MM/DD/RRRR'** format Mask. 
@@ -171,7 +172,8 @@ Examples
 - 02/19/2017
 - Item Based . To set the maximum date to the end of the month. Create a P1_MAX_DATE hidden Item and refer it in the Maximum Date attribute as &P1_MAX_DATE.  Set its value with the following After Header PL/SQL expression computation:
 ```pl/sql
-to_char(last_day(sysdate), 'MM/DD/YYYY')```
+to_char(last_day(sysdate), 'MM/DD/YYYY')
+```
 
 
 >Remember to use the date **'MM/DD/YYYY'** OR **'MM/DD/RRRR'** format Mask. 
@@ -253,11 +255,13 @@ Examples
 
 **For months view**:
 ```javascript
-"months":"<span style='color:red;background-color:yellow;font-size:2em'>Year:yyyy</span>" ```
+"months":"<span style='color:red;background-color:yellow;font-size:2em'>Year:yyyy</span>" 
+```
 
 **For years view**:
 ```javascript
-"years":"<span style='color:red;background-color:yellow;font-size:2em'>Decade:yyyy1 - yyyy2</span>" ```
+"years":"<span style='color:red;background-color:yellow;font-size:2em'>Decade:yyyy1 - yyyy2</span>" 
+```
 
 All can be **combined with comma** as following
 ```javascript
