@@ -16,7 +16,7 @@ It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 ![alt text](assets/DP_Range.bmp "Date Picker")
 
 ##Demo Application
-[Date Picker Application](https://apex.oracle.com/pls/apex/f?p=83009:1 "DatePicket Homepage")
+[Date Picker Application](https://apex.oracle.com/pls/apex/f?p=83009:10 "DatePicker Homepage")
 
 
 ##Plugin Features
