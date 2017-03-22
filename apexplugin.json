@@ -1,6 +1,6 @@
 {
   "name": "Dynamic Date Time Picker",
-  "version": "1.0",
+  "version": "1.1",
   "private" : "N",
   "description": "Dynamic Date and Time Picker based on Air date Picker",
   "keywords": ["oracle","apex", "plugin", "item", "date","time", "datetime", "datepicker",  "datetimepicker", "clockpicker", "timepicker", "clock", "calendar"],
