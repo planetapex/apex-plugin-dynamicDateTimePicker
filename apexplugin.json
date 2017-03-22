@@ -28,7 +28,7 @@
       "plugin": {
         "internalName": "COM.PLANETAPEX.DYNAMICDATETIMEPICKER",
         "type": "item",
-        "demo": "https://apex.oracle.com/pls/apex/f?p=83009:2",
+        "demo": "https://apex.oracle.com/pls/apex/f?p=83009:10",
         "previewImage": "https://raw.githubusercontent.com/planetapex/apex-plugin-dynamicDateTimePicker/master/assets/DP_Range.bmp"
       }
     }
