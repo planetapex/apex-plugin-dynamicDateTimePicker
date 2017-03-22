@@ -4,8 +4,9 @@
     options: {
       dateItemID: '',
       dateToItem: null,
-      desktopUI:true,
-      dateTimeSplit:false,
+      desktopUI: true,
+      dateTimeSplit: false,
+      readOnly: false,
       showMethod: null,
       todayBtnText: null,
       classes: '',
@@ -69,27 +70,27 @@
      * Set private widget varables
      */
     _setWidgetVars: function() {
-       
-      
-   if (this.options.desktopUI == true) {
-      this.apex = {
-        item: this.element,
-        $elm: $(this.element),
-        toItem: $(document.getElementById(this.options.dateToItem)),   //$('#'+this.options.dateToItem),
-        datepickerButton: this.element.nextAll('button').first(),
-        datepickerToButton:$(document.getElementById(this.options.dateToItem)).nextAll('button').first(),
-        picker: null,
-        toPicker:null
-      };
-     }else {
-      this.apex = {
-        item: this.element,
-        $elm: $(this.element),
-        toItem: $(document.getElementById(this.options.dateToItem)),   //$('#'+this.options.dateToItem),
-        picker: null,
-        toPicker:null
-      };
-     }
+
+
+      if (this.options.desktopUI == true) {
+        this.apex = {
+          item: this.element,
+          $elm: $(this.element),
+          toItem: $(document.getElementById(this.options.dateToItem)), //$('#'+this.options.dateToItem),
+          datepickerButton: this.element.nextAll('button').first(),
+          datepickerToButton: $(document.getElementById(this.options.dateToItem)).nextAll('button').first(),
+          picker: null,
+          toPicker: null
+        };
+      } else {
+        this.apex = {
+          item: this.element,
+          $elm: $(this.element),
+          toItem: $(document.getElementById(this.options.dateToItem)), //$('#'+this.options.dateToItem),
+          picker: null,
+          toPicker: null
+        };
+      }
 
 
 
@@ -109,7 +110,7 @@
      * Init function. This function will be called each time the widget is referenced with no parameters
      */
     _init: function() {
-     
+
       //For this plug-in there's no code required for this section
       //Left here for demonstration purposes
       apex.debug.log(this._scope, '_init', this);
@@ -122,19 +123,23 @@
      * Does all the required setup etc and binds change event
      */
     _create: function() {
-      
-     if (this.options.dateToItem != null && this.options.range == true && this.options.desktopUI == true) {
-        
-           $('#' + this.options.dateToItem).after('<button type="button" class="dyndatepicker-trigger a-Button a-Button--calendar">' +                 
-                  '<span class="a-Icon icon-calendar"></span></button>');
 
-        } 
+      if (this.options.dateToItem && this.options.readOnly) {
+        $('#' + this.options.dateToItem).prop("readonly", true);
+
+      }
+
+      if (this.options.dateToItem != null && this.options.desktopUI  && (this.options.range  || this.options.dateTimeSplit)) {
+        $('#' + this.options.dateToItem).after('<button type="button" class="dyndatepicker-trigger a-Button a-Button--calendar">' +
+          '<span class="a-Icon icon-calendar"></span></button>');
+
+      }
 
 
       this._setWidgetVars();
-      
+
       var consoleGroupName = this._scope + '_create';
-      //apex.debug.groupCollapsed(consoleGroupName);
+
       apex.debug.log('this:', this);
 
       var
@@ -142,35 +147,34 @@
         minDate = '',
         maxDate = '';
 
-     
+
       //Register DatePicker
 
 
-      
+
       apex.debug.log('element:', this.apex.item);
 
       if (this.options.position == 'right bottom' || this.options.position == 'right top') {
         this.options.offset = 47;
       }
-      
-      
+
+
       this.options.onSelect = function(fd, date, o) {
-        
-        if (o.opts.dateToItem != null && o.opts.range == true ) {
-         
-         $('#' + o.opts.dateItemID).val(fd.split(o.opts.multipleDatesSeparator)[0]);
-          //$('#' +$('#' + o.el.id).attr('data-otheritem')).val(fd.split(o.opts.multipleDatesSeparator)[1]) ;      
-          $('#' + o.opts.dateToItem).val(fd.split(o.opts.multipleDatesSeparator)[1]);
-         
 
-        } else if (o.opts.dateToItem != null &&  o.opts.dateTimeSplit == true) {
-          
+        if (o.opts.dateToItem != null && o.opts.range ) {
+
+          $('#' + o.opts.dateItemID).val(fd.split(o.opts.multipleDatesSeparator)[0]);
+
+          $('#' + o.opts.dateToItem).val(fd.substring(fd.split(o.opts.multipleDatesSeparator)[0].length + 1, fd.length));
+
+
+        } else if (o.opts.dateToItem != null && o.opts.dateTimeSplit ) {
+
           $('#' + o.el.id).val(fd.split(o.opts.dateTimeSeparator)[0]);
-          //$('#' +$('#' + o.el.id).attr('data-otheritem')).val(fd.split(o.opts.multipleDatesSeparator)[1]) ;      
-          $('#' + o.opts.dateToItem).val(fd.split(o.opts.dateTimeSeparator)[1]);
+          $('#' + o.opts.dateToItem).val(fd.substring(fd.split(o.opts.dateTimeSeparator)[0].length + 1, fd.length));
 
 
-        } 
+        }
 
         var extraParams = {
             fd: fd,
@@ -187,7 +191,7 @@
 
 
       this.options.onShow = function(o, animationCompleted) {
-       
+
         var extraParams = {
             inst: o,
             animationCompleted: animationCompleted
@@ -220,7 +224,7 @@
             year: year,
             inst: this
           },
-        $this = $('#' + this.dateItemID);
+          $this = $('#' + this.dateItemID);
         $this.trigger('onchangemonth', extraParams);
         //apex.event.trigger(document.getElementById(this.dateItemID), 'onchangemonth');
       }
@@ -229,7 +233,7 @@
             year: year,
             inst: this
           },
-        $this = $('#' + this.dateItemID);
+          $this = $('#' + this.dateItemID);
         $this.trigger('onchangeyear', extraParams);
         //apex.event.trigger(document.getElementById(this.dateItemID), 'onchangeyear');
       }
@@ -238,7 +242,7 @@
             decade: decade,
             inst: this
           },
-        $this = $('#' + this.dateItemID);
+          $this = $('#' + this.dateItemID);
         $this.trigger('onchangedecade', extraParams);
         //apex.event.trigger(document.getElementById(this.dateItemID), 'onchangedecade');
       }
@@ -247,7 +251,7 @@
             view: view,
             inst: this
           },
-             $this = $('#' + this.dateItemID);
+          $this = $('#' + this.dateItemID);
         $this.trigger('onchangeview', extraParams);
         // apex.event.trigger(document.getElementById(this.dateItemID), 'onchangeview');
       }
@@ -258,24 +262,24 @@
             cellType: cellType,
             inst: this
           },
-        $this = $('#' + this.dateItemID);
+          $this = $('#' + this.dateItemID);
         $this.trigger('onrendercell', extraParams);
         //apex.event.trigger(document.getElementById(this.dateItemID), 'onrendercell');
 
       }
 
       this.options.showEvent = '';
-      
+
       this.apex.picker = this.apex.item.datepicker(this.options, function(start, end, label) {
         //console.log('---Callback function---');
       }).data('datepicker');
-       
-      
 
-      if (this.options.dateToItem != null && this.options.range == true  && this.options.inline == true && this.options.desktopUI == true) {
-           $('#' + this.options.dateItemID).after('<button type="button" class="dyndatepicker-trigger a-Button a-Button--calendar">' +                 
-                  '<span class="a-Icon icon-calendar"></span></button>');
-        } 
+
+
+      if (this.options.dateToItem != null && this.options.range && this.options.inline  && this.options.desktopUI ) {
+        $('#' + this.options.dateItemID).after('<button type="button" class="dyndatepicker-trigger a-Button a-Button--calendar">' +
+          '<span class="a-Icon icon-calendar"></span></button>');
+      }
 
       // event handling
       //==========================================================================================
@@ -284,15 +288,15 @@
         this.apex.item.on('click', $.proxy(this._nativeShowPicker, this));
         this.apex.toItem.on('click', $.proxy(this._nativeShowPicker, this));
 
-      } else if (this.options.showMethod == 'icon' && this.options.desktopUI == true) {
+      } else if (this.options.showMethod == 'icon' && this.options.desktopUI ) {
         this.apex.datepickerButton.on('click', $.proxy(this._nativeShowPicker, this));
         this.apex.datepickerToButton.on('click', $.proxy(this._nativeShowPicker, this));
 
       } else if (this.options.showMethod == 'clickicon') {
-        this.apex.item.on('click', $.proxy(this._nativeShowPicker, this));        
+        this.apex.item.on('click', $.proxy(this._nativeShowPicker, this));
         this.apex.toItem.on('click', $.proxy(this._nativeShowPicker, this));
-       
-        if (this.options.desktopUI == true) {         
+
+        if (this.options.desktopUI ) {
           this.apex.datepickerButton.on('click', $.proxy(this._nativeShowPicker, this));
           this.apex.datepickerToButton.on('click', $.proxy(this._nativeShowPicker, this));
 
@@ -322,7 +326,7 @@
       if (this.apex.item.is('.disabled')) {
         return false;
       }
-     this.apex.picker.show();
+      this.apex.picker.show();
     },
 
     _nativePickerHide: function() {
