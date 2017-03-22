@@ -1,25 +1,25 @@
 
-#Oracle APEX Item Plugin - DynamicDateTimePicker
+# Oracle APEX Item Plugin - DynamicDateTimePicker
 DynamicDateTimePicker is an item type plugin that allows users to select date and time from a calender picker.
 It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 
 
-##Changelog
-####1.0 - Initial Release
+## Changelog
+#### 1.0 - Initial Release
 
 
-##Install
+## Install
 - Import plugin file "item_type_plugin_com_planetapex_dynamicdatetimepicker.sql" from source directory into your application
 - (Optional) Deploy the CSS/JS files from "src" directory on your webserver and change the "File Prefix" to webservers folder.
 
-##Preview
+## Preview
 ![alt text](assets/DP_Range.bmp "Date Picker")
 
-##Demo Application
+## Demo Application
 [Date Picker Application](https://apex.oracle.com/pls/apex/f?p=83009:10 "DatePicker Homepage")
 
 
-##Plugin Features
+## Plugin Features
 - 11 Types of Date and Time Picker to choose from.
 - Multi-Languages, 16 Languages support
 - Showing <b>Inline</b> as part of the page or <b>On Show events</b> like click, focus or mouse enter
@@ -29,14 +29,8 @@ It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 - Previous and Forward Navigation Buttons Icons
 
 
-
-
-
-
-
-
-##Plugin Settings
-###Date and Time Picker Types
+## Plugin Settings
+### Date and Time Picker Types
 ---
 Users have many options for the Date and Time Picker types, for example:
 - Single Date Picker
@@ -52,21 +46,21 @@ Users have many options for the Date and Time Picker types, for example:
 - Date Time Split
 
 
->**To Date(Time) Item**
->This item is used to set the 2nd Value in the following Date Picker Types
+> **To Date(Time) Item**
+> This item is used to set the 2nd Value in the following Date Picker Types
 - Date Range Picker
 - Month Range Picker
 - Year Range Picker
 - Date Time Split
 
 
-###Time Picker Addon Options
+### Time Picker Addon Options
 Each of the Date and Time Picker Type option has an option to apend a time picker to it so that the user can select time as well.
 
-####Date Time Separator
+#### Date Time Separator
 Separator between date and time
 
-####Hours:Minutes Minimum Maximum
+#### Hours:Minutes Minimum Maximum
 
 Minimum and Maximum **hours** value, must be between 00 and 23. You will not be able to choose value higher than this.
 
@@ -90,9 +84,9 @@ ___
 
 
 
-###DatePicker Options
+### DatePicker Options
 
-####Multiple Dates Separator
+#### Multiple Dates Separator
 
 Multiple Dates separator is used when concatenating dates to string in the following Date Picker types:
 
@@ -101,7 +95,7 @@ Multiple Dates separator is used when concatenating dates to string in the follo
 - Multiple Years Picker
 
 
-####First Day of Week
+#### First Day of Week
 
 Determine which day the week will be started from.
 
@@ -117,7 +111,7 @@ Available options include:
 - Friday
 - Saturday
 
-####Weekends
+#### Weekends
 
 List of day's which will be considered as weekends. Class **-weekend-** will be added to relevant cells.
 
@@ -134,13 +128,13 @@ Available options include:
 - Friday
 
 
-####Minimum Date
+#### Minimum Date
 
 The minimum date for date picker. All dates, running before it can't be selected.
 
 Minimum and Maximum date usually works well with the following settings:
 
-> Disable Navigation When Out Of Range Option. So the user also can't navigate to dates with Minimum and Maximum dates set.
+>Disable Navigation When Out Of Range Option. So the user also can't navigate to dates with Minimum and Maximum dates set.
 
 The date value can be:
 - an absolute value in **"DD/MM/YYYY"** or **"DD/MM/RRRR"** date format mask or
@@ -157,7 +151,7 @@ to_char(trunc(sysdate, 'MM'), 'MM/DD/YYYY')
 
 >Remember to use the date **'MM/DD/YYYY'** OR **'MM/DD/RRRR'** format Mask. 
 
-####Maximum Date
+#### Maximum Date
 
 The maximum date for date picker. All dates, running after it can't be selected.
 
@@ -181,30 +175,30 @@ to_char(last_day(sysdate), 'MM/DD/YYYY')
 >Remember to use the date **'MM/DD/YYYY'** OR **'MM/DD/RRRR'** format Mask. 
 
 
-####Show Method
+#### Show Method
 
 Selects the method the date picker calendar displays.
 
 Available options include:
 
 
-<dt>**On item click**</dt>
+**<dt>On item click</dt>**
 <dd>The date time picker pop-up displays when the item is clicked.</dd>
-<dt>**On icon click**</dt>
+**<dt>On icon click</dt>**
 <dd>The date time picker pop-up displays when the icon is clicked.</dd>
-<dt>**On item and icon click**</dt>
+**<dt>On item and icon click</dt>**
 <dd>The date time picker pop-up displays when the item or icon is clicked.</dd>
-<dt>**On focus**</dt>
+**<dt>On focus</dt>**
 <dd>The date time picker pop-up displays as soon as the item receives focus.</dd>
-<dt>**On mouse enter**</dt>
+**<dt>On mouse enter</dt>**
 <dd>The date time picker pop-up displays when mouse hovers over the item.</dd>
-<dt>**Inline**</dt>
+**<dt>Inline</dt>**
 <dd>The date time picker will be always visible, inline with the item.</dd>
 
 
 
 
-####Display Position
+#### Display Position
 
 Position of date picker relative to text input.
 
@@ -231,7 +225,7 @@ Examples
 Right Top will set date picker's position from right side upwards of text input.
 
 
-####DatePicker Title
+#### DatePicker Title
 
 Content of datepicker's title depending on current view.
 
@@ -244,7 +238,7 @@ There are three views in the Date Picker
 >Missing fields will be taken from default values.
 
 This setting can contain simple text, HTML with Styling and relevant, specific format mask. check out examples
->######<span style="color:red">Never Hard Break i.e use keyboard return in code.</span>
+>###### <span style="color:red">Never Hard Break i.e use keyboard return in code.</span>
 
 
 
@@ -276,11 +270,11 @@ ___
 Available options include:
 
 
-<dt>**Toggle Selected**</dt>
+**<dt>Toggle Selected</dt>**
 <dd>    If checked, then clicking on selected cell will remove it from selection and its value from the item.</dd>
-<dt>**Autoclose**</dt>
+**<dt>Autoclose</dt>**
 <dd>If checked, date picker will close after date selection.</dd>
-<dt>**Keyboard Navigation**</dt>
+**<dt>Keyboard Navigation</dt>**
 <dd>If checked, then one can navigate through calendar by keyboard.</dd>
 
 ```    
@@ -296,28 +290,28 @@ Available options include:
 ```
 
 
-<dt>**Today Button**</dt>
+**<dt>Today Button</dt>**
 <dd>If checked, "Today" button will be visible.</dd>
-<dt>**Clear Button**</dt>
+**<dt>Clear Button</dt>**
 <dd>If checked, "Clear" button will be visible.</dd>
-<dt>**Show Days from Other Months[Days' View]**</dt>
+**<dt>Show Days from Other Months[Days' View]</dt>**
 <dd>If checked, days from other months will be visible.</dd>
-<dt>**Select Days from Other Months[Days' View]**</dt>
+**<dt>Select Days from Other Months[Days' View]</dt>**
 <dd>If checked, the user can select days form other months.</dd>
-<dt>**Transition to Selected Month[Days' View]**</dt>
+**<dt>Transition to Selected Month[Days' View]</dt>**
 <dd>If checked, selecting days from other month, will move to that month.</dd>
-<dt>**Show other Years[Years' View]**</dt>
+**<dt>Show other Years[Years' View]</dt>**
 <dd>If checked, years from other decades will be visible.</dd>
-<dt>**Select Other Years[Years' View]**</dt>
+**<dt>Select Other Years[Years' View]</dt>**
 <dd>If checked, user can select years from other decades</dd>
-<dt>**Transition to Selected Year[Years' View]**</dt>
+**<dt>Transition to Selected Year[Years' View]</dt>**
 <dd>If checked, selecting year from other decade, will move to that decade.</dd>
-<dt>**Disable Navigation When Out Of Range**</dt>
+**<dt>Disable Navigation When Out Of Range</dt>**
 <dd>If checked, for dates less than minimum possible or more then maximum possible, navigation buttons ('forward', 'back') will be deactivated.</dd>
 
 
 ___
-###Languages
+### Languages
 
 Available languages include:
 
@@ -337,17 +331,4 @@ Available languages include:
 - Russian
 - Slovak
 - Spanish
-
-
-
-
-
-
-
-
-
-
-
-
-
 
