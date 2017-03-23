@@ -5,6 +5,7 @@ It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 
 
 ## Changelog
+#### 1.1 - Validations for All Date Picker Types, Min & Max Date|Hours & Minutes, known bugs removed.
 #### 1.0 - Initial Release
 
 
