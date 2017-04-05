@@ -3,6 +3,11 @@
 DynamicDateTimePicker is an item type plugin that allows users to select date and time from a calender picker.
 It is based on a JS Air datePicker (https://github.com/t1m0n/air-datepicker).
 
+## Donation
+
+Your support means a lot.
+
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.me/MYasirAliShah/4)
 
 ## Changelog
 #### 1.1 - Validations for All Date Picker Types, Min & Max Date|Hours & Minutes, known bugs removed.
