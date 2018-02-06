@@ -61,7 +61,7 @@ Users have many options for the Date and Time Picker types, for example:
 
 
 ### Time Picker Addon Options
-Each of the Date and Time Picker Type option has an option to apend a time picker to it so that the user can select time as well.
+Each of the Date and Time Picker Type option has an option to append a time picker to it so that the user can select time as well.
 
 #### Date Time Separator
 Separator between date and time
